@@ -1,23 +1,12 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #e0f7fa; /* Icy blue */
-}
-
 .player {
   text-align: center;
-  width: 80%;
+  /* width: 80%;
   max-width: 600px;
-  background-color: #ffffff; /* White */
-  border: 1px solid #b0bec5; /* Silver */
+  background-color: #ffffff; 
+  border: 1px solid #b0bec5; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 20px; */
 }
 
 audio {
@@ -36,6 +25,8 @@ audio {
   padding: 10px;
   border-radius: 10px;
 }
+
+
 
 .lyric-line {
   margin: 0;
@@ -126,12 +117,24 @@ body::before {
   color: #004d40; /* Dark green */
 }
 
-.dark-mode {
-  background-color: #263238; /* Dark blue-gray */
-  color: #eceff1; /* Light icy blue */
-}
+/* 默认的浅色模式样式（已经定义好在你的代码中） */
 
-.light-mode {
-  background-color: #e0f7fa; /* Icy blue */
-  color: #000;
+@media (prefers-color-scheme: dark) {
+
+  .lyrics {
+      background: #263238; /* Dark blue-gray */
+      color: #eceff1; /* Light icy blue */
+  }
+
+  .lyric-line.active {
+      background: linear-gradient(135deg, #b2fab4 0%, #4caf50 100%);
+      border-left: 4px solid #1b5e20;
+      color: #1b5e20; /* Dark green */
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .countdown {
+    color: #eceff1;
+  }
+
 }
